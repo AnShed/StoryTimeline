@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="pl">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/fontello.css">
+    <link href="https://fonts.googleapis.com/css?family=Galada|Roboto" rel="stylesheet"> 
+    
+    <script src="libraries/p5.js"></script>
+    <script src="libraries/p5.dom.js"></script>
+    <script src="libraries/p5.sound.js"></script>
+    <script src="js/sketch.js"></script>
+    <script src="js/vendor/prefixfree.min.js"></script>
+    
+    <title>Story organiser - Main</title>
+</head>
+
+<body>
+    <div align="center">
+        <div id="container">
+            <div id="topContainer">
+                <header>
+                    <div class="title_background"></div>
+                    <div class="centered">
+                        <a href="#">
+                            <h1>Story organiser</h1><div class="line"></div><h1>Timeline</h1>
+                        </a>
+                    </div>
+                </header>
+                <nav>
+                    <li id="menuDescription"><a href="#"><span>O stronie</span></a></li>
+                    <li id="menuDemo"><a href="#"><span>Wypróbuj!</span></a></li>
+                    <li id="menuRegLog"><a href="#"><span>Zaczynamy!</span></a></li>
+                </nav>
+            </div>
+            <!--end of topContainer-->
+            <div id="midContainer">
+                <div id="description">
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Reprehenderit inventore odit dolorum harum illo repudiandae explicabo, quis quisquam deleniti nemo itaque! Itaque error dolore sapiente rem fugiat nihil accusamus. Sunt! Nihil sunt eos earum, perferendis assumenda, ipsam at dicta consequatur doloremque consequuntur sed nisi ex ducimus. Sequi reiciendis odit laudantium illo consectetur labore, distinctio maiores iste. Tenetur praesentium, dolore culpa!</p>
+                    <p>Cupiditate illum maiores hic illo, quos enim, repudiandae autem provident vel, voluptatibus nesciunt pariatur voluptatem! Quos dicta impedit doloremque sapiente repellendus omnis facilis maxime, sint possimus suscipit quaerat vero tempora. Laudantium dolores, blanditiis enim, vitae ut natus. Dicta deserunt ipsum voluptates ex labore consectetur temporibus necessitatibus quam explicabo eum dolore vero sapiente doloremque, corporis qui fugiat, adipisci sunt impedit ut.</p>
+                </div>
+                <div class="hidden" id="timelineContainer">
+                    <div id="timeline"></div>
+                    <div id="editMenu">
+                        <div class="editMenuElement" id="editMenuTrash">
+                            <div class="editMenuSpacer" id="editMenuTrashIconContainer"><i class="icon-trash"></i></div>
+                        </div>
+                        <div class="editMenuElement" id="editMenuBrush">
+                            <div class="editMenuSpacer" id="editMenuBrushIconContainer"><i class="icon-brush"></i></div>
+                        </div>
+                        <div class="editMenuElement" id="editMenuMove">
+                            <div class="editMenuSpacer" id="editMenuMoveIconContainer"><i class="icon-move"></i></div>
+                        </div>
+                        <div class="editMenuElement" id="editMenuEdit">
+                            <div class="editMenuSpacer" id="editMenuEditIconContainer"><i class="icon-edit"></i></div>
+                        </div>
+                        <div class="editMenuElement" id="editMenuPlus">
+                            <div class="editMenuSpacer" id="editMenuPlusIconContainer"><i class="icon-plus-circled"></i></div>
+                        </div>
+                    </div>
+                    <br>
+                    <div style="clear: both;"></div>
+                    <div id="timelineMain">
+                        <div id="markerTitle">
+                            <h2>
+                                <div id="markerTitleText">GIMLI - POJEDYNEK NA CIUPAGI</div>
+                            </h2>
+                        </div>
+                        <div id="markerDescription">
+                            <h2><span>Opis wydarzenia</span></h2>
+                            <div id="markerDescriptionText"> Gimli napierdzielał się z orkami w konkursie lania ciupagą. Wychowywał się w wiosce u podnóża Tatr, więc był przyzwyczajony do zadawania szybkich i miażdzących ciosów ciupagą. Orki nie miały szans. Z pierwszego miejsca na podium krzyczał "GOHA GOHA GOHA 3ZŁ".</div>
+                        </div>
+                        <div id="markerCharacters">
+                            <h2><span>Postaci biorące udział</span></h2>
+                            <div id="markerCharactersText">
+                                Gimli
+                                <br> Borg
+                                <br> Jorgk
+                                <br> Worgaiudsh
+                                <br> Azogas
+                                <br> Azul
+                                <br> Dupant
+                                <br> Qwethnethtogs
+                            </div>
+                        </div>
+                    </div>
+                    <!--end of timelineMain-->
+                    <div id="timelineEdit" class="hidden">
+                        <div style="clear: both"></div>
+                        <div id="edittors">
+                            <div id="editTitle">
+                                <h2><span>Wydarzenie</span></h2>
+                            </div>
+                            <div id="inputEditTitle">
+                                <input type="text" name="title" id="timelineEditInputText" size="50">
+                            </div>
+                            <div id="editDescription">
+                                <h2><span>Opis wydarzenia</span></h2>
+                                <textarea rows="30" cols="50" id="timelineEditTextAreaDescription"></textarea>
+                            </div>
+                            <div id="editCharacters">
+                                <h2><span>Postaci biorące udział</span></h2>
+                                <textarea rows="30" cols="50" id="timelineEditTextAreaCharacters"></textarea>
+                            </div>
+                            <div style="clear: both"></div>
+                        </div>
+                        <div id="buttons">
+                            <div class="cancelButton" id="editCancel">
+                                <div class="cancelIcon">
+                                    <div class="editMenuSpacer"><i class="icon-cancel"></i></div>
+                                </div>
+                                <div class="cancel"><b>Anuluj</b></div>
+                            </div>
+                            <div class="saveButton" id="editSave">
+                                <div class="saveIcon">
+                                    <div class="editMenuSpacer"><i class="icon-floppy"></i></div>
+                                </div>
+                                <div class="save"><b>Zapisz</b></div>
+                            </div>
+                        </div>
+                    </div>
+                    <!--end of timelineEdit-->
+                    <div id="timelineMove" class="hidden">
+                        <div id="moveTitle"></div>
+                        <div style="clear: both"></div>
+                        <div id="buttons">
+                            <div class="cancelButton" id="moveCancel">
+                                <div class="cancelIcon">
+                                    <div class="editMenuSpacer"><i class="icon-cancel"></i></div>
+                                </div>
+                                <div class="cancel"><b>Anuluj</b></div>
+                            </div>
+                            <div class="saveButton" id="moveSave">
+                                <div class="saveIcon">
+                                    <div class="editMenuSpacer"><i class="icon-floppy"></i></div>
+                                </div>
+                                <div class="save"><b>Zapisz</b></div>
+                            </div>
+                        </div>
+                    </div>
+                    <!--end of timelineMove-->
+                    <div id="timelinePaint" class="hidden">
+                        <div id="paintTitle"></div>
+                        <div id="colorChoose">Wybierz kolor dla tego znacznika osi: <input type="color" id="colorPicker"></div>
+                        <div style="clear: both"></div>
+                        <div id="buttons">
+                            <div class="cancelButton" id="paintCancel">
+                                <div class="cancelIcon">
+                                    <div class="editMenuSpacer"><i class="icon-cancel"></i></div>
+                                </div>
+                                <div class="cancel"><b>Anuluj</b></div>
+                            </div>
+                            <div class="saveButton" id="paintSave">
+                                <div class="saveIcon">
+                                    <div class="editMenuSpacer"><i class="icon-floppy"></i></div>
+                                </div>
+                                <div class="save"><b>Zapisz</b></div>
+                            </div>
+                        </div>
+                    </div>
+                    <!--end of timelinePaint-->
+                    <div id="timelineDelete" class="hidden">
+                        <div id="deleteTitle"></div>
+                        <div style="clear: both"></div>
+                        <div id="buttons">
+                            <div class="cancelButton" id="deleteCancel">
+                                <div class="cancelIcon">
+                                    <div class="editMenuSpacer"><i class="icon-cancel"></i></div>
+                                </div>
+                                <div class="cancel"><b>Anuluj</b></div>
+                            </div>
+                            <div class="saveButton" id="deleteSave">
+                                <div class="saveIcon">
+                                    <div class="editMenuSpacer"><i class="icon-floppy"></i></div>
+                                </div>
+                                <div class="save"><b>Zapisz</b></div>
+                            </div>
+                        </div>
+                    </div>
+                    <!--end of timelineDelete-->
+                    <div style="clear: left;"></div>
+                </div>
+                <div class="hidden" id="regLog">
+                    <div> 
+                        <object type="text/html" data="timeline.html" width="900px" height="850px" style="overflow:auto; vertical-align:middle;" align="center">
+                        </object>
+                     </div>
+                </div>
+                <!--end of regLog-->
+            </div>
+            <!--end of midContainer-->
+            <footer>
+                AnShed &#169; All rights reserved, stuff stuff
+            </footer>
+            <!--end of footer-->
+        </div>
+    </div>
+</body>
+
+</html>
