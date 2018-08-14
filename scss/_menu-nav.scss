@@ -1,0 +1,70 @@
+@import "_variables.scss";
+
+#topContainer{
+    position: relative;
+}
+header{
+    color: white;
+    background-color: #000;
+    font-size: 5vw;
+    height: 50vh;
+}
+.title_background{
+    /* The image used */
+    background-image: url("../imgs/indoor_library.jpg");
+    opacity: 0.5;
+    /* Full height */
+    height: 100%;
+
+    /* Center and scale the image nicely */
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+/* Centered text */
+.centered {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-family: "Galada", cursive; /* do zmiany bo wygląda średnio :/  */
+}
+header a{
+    text-decoration: none;
+    color: $main-orange-color; /*DBA736*/ /*B82601*/
+}
+.line{
+    margin-left: -30%;
+    margin-right: -30%;
+    margin-top: auto;
+    margin-bottom: auto;
+    border-style: inset;
+    border-width: 1px;
+}
+nav{
+    position: absolute;
+    width: 100%;
+    background-color: red;
+}
+nav li{
+    list-style: none;
+    float: left;
+    width: 33.33%;
+    height: 1.4em;
+    font-size: 2vw;
+}
+nav li a{
+    color: $main-orange-color;
+    text-decoration: none;
+    display: block;
+    height: 1.3em;
+    background-color: $main-grey-color; /*875F9A*/ /*6D7993*/
+    padding-top: 0.1em;
+    transition: 0.2s;
+}
+nav li a:hover{
+    padding-top: 0.4em;
+    /*padding-bottom: 0.3em;*/
+    background-color: $main-orange-color;
+    color: $main-grey-color;
+}

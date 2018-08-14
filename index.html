@@ -4,19 +4,19 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="scss/style.min.css">
     <link rel="stylesheet" href="css/fontello.css">
-    <link href="https://fonts.googleapis.com/css?family=Galada|Roboto" rel="stylesheet"> 
-    
+    <link href="https://fonts.googleapis.com/css?family=Galada|Roboto" rel="stylesheet">
+
     <script src="libraries/p5.js"></script>
     <script src="libraries/p5.dom.js"></script>
     <script src="libraries/p5.sound.js"></script>
     <script src="js/sketch.js"></script>
     <script src="js/vendor/prefixfree.min.js"></script>
-    
-    <title>Story organiser - Main</title>
-</head>
 
+    <title>Story timeline - Main</title>
+</head>
+<!--dodać tutaj wszystko na flexie albo na media queries-->
 <body>
     <div align="center">
         <div id="container">
@@ -25,7 +25,7 @@
                     <div class="title_background"></div>
                     <div class="centered">
                         <a href="#">
-                            <h1>Story organiser</h1><div class="line"></div><h1>Timeline</h1>
+                            <h1>Story</h1><div class="line"></div><h1>Timeline</h1>
                         </a>
                     </div>
                 </header>
@@ -38,8 +38,38 @@
             <!--end of topContainer-->
             <div id="midContainer">
                 <div id="description">
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Reprehenderit inventore odit dolorum harum illo repudiandae explicabo, quis quisquam deleniti nemo itaque! Itaque error dolore sapiente rem fugiat nihil accusamus. Sunt! Nihil sunt eos earum, perferendis assumenda, ipsam at dicta consequatur doloremque consequuntur sed nisi ex ducimus. Sequi reiciendis odit laudantium illo consectetur labore, distinctio maiores iste. Tenetur praesentium, dolore culpa!</p>
-                    <p>Cupiditate illum maiores hic illo, quos enim, repudiandae autem provident vel, voluptatibus nesciunt pariatur voluptatem! Quos dicta impedit doloremque sapiente repellendus omnis facilis maxime, sint possimus suscipit quaerat vero tempora. Laudantium dolores, blanditiis enim, vitae ut natus. Dicta deserunt ipsum voluptates ex labore consectetur temporibus necessitatibus quam explicabo eum dolore vero sapiente doloremque, corporis qui fugiat, adipisci sunt impedit ut.</p>
+                    <div class="leftSideText">
+                        <h2>Do czego służy ta strona?</h2>
+                        <strong>Story - Timeline</strong> to strona skierowana do ludzi, którzy podobnie jak jej autor, lubią uporządkowywać sobie nowo poznane historie.
+                        Nie jest istotne czy jest to fabuła książki, filmu, czy też historia starożytna czy też historia rodziny. Strona znajduje zastosowanie wszędzie tam gdzie można coś umieszczać na osi czasu.
+                        I służy właśnie do tego. Czyli umieszczanie punktów na osi czasu. Dodatkowo do dodawania postaci i kolejnych osi.
+                        Na razie dany użytkownik ma dostęp tylko i wyłącznie do swoich własnych pozycji na półce.
+                    </div>
+                    <div class="rightSideText">
+                        <h2>Co można na niej zrobić?</h2>
+                        Po zarejestrowaniu i zalogowaniu, na swoją półkę można dodawać pozycje(domyślnie zwane książkami(oczywiście może to być cokolwiek)), które następnie można edytować.
+                        Pisząc edytować mam na myśli:
+                            <ul>
+                                <li>dodawanie punktów na osi czasu, wraz z ich opisami i postaciami, które w wydarzeniu brały udział</li>
+                                <li>dodawanie postaci, ich opisów, relacjami z innymi bohaterami</li>
+                                <li>przemieszczać i zmieniać tekst wcześniej dodanych punktów na osi</li>
+                                <li>I wiele więcej.</li>
+                            </ul>
+                    </div>
+                    <div class="leftSideText">
+                        <h2>Jak mogę robić te rzeczy?</h2>
+                        <section>
+                            tutaj pododawać ikonki z tym co robią
+                        </section>
+                    </div>
+                    <div class="rightSideText">
+                        <h2>Czy strona będzie się rozwijać?</h2>
+                        Oczywiście. W planach jest dodanie między innymi:
+                        <ul>
+                            <li>możliwości udostępniania swoich ksiażek razem z postaciami i wydarzeniami, które dla niej zapisałeś</li>
+                            <li>panel do wizualizacji relacji między postaciami w formie zbliżonej do drzewa genealogicznego</li>
+                        </ul>
+                    </div>
                 </div>
                 <div class="hidden" id="timelineContainer">
                     <div id="timeline"></div>
@@ -183,8 +213,8 @@
                     <div style="clear: left;"></div>
                 </div>
                 <div class="hidden" id="regLog">
-                    <div> 
-                        <object type="text/html" data="timeline.html" width="900px" height="850px" style="overflow:auto; vertical-align:middle;" align="center">
+                    <div>
+                        <object type="text/html" data="timeline.html" width="1000px" height="900px" style="overflow:auto; vertical-align:middle;" align="center">
                         </object>
                      </div>
                 </div>

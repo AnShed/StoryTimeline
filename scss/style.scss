@@ -1,0 +1,27 @@
+@import "_variables.scss";
+@import "_menu-nav.scss";
+@import "_demo.scss";
+@import "_description.scss";
+
+*{
+    margin: 0;
+    padding: 0;
+}
+body, html {
+    height: 100%;
+    margin: 0;
+}
+#container{
+    width: 100%;
+}
+
+#midContainer{
+    padding-top: 4%;
+    text-align: justify;
+}
+.hidden{
+    display: none;
+}
+#regLog{
+    padding-left: 10%;
+}
